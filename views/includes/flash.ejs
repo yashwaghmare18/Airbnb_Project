@@ -1,13 +1,25 @@
-   <% if(sucess && sucess.length){ %> 
-        <div class="alert alert-success alert-dismissible fade show mt-3 mb-3 col-6 offset-3" role="alert">
-            <%= sucess %>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-    <% } %>
+<style>
+  @media (max-width : 991px) {
+    .flash {
+      margin: auto;
+    }
+  }
+</style>
 
-    <% if(error && error.length){ %> 
-        <div class="alert alert-danger alert-dismissible fade show mt-3 mb-3 col-6 offset-3" role="alert">
-            <%= error %>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-    <% } %>
+<% if(sucess && sucess.length){ %>
+  <div class="row flash">
+    <div class="alert alert-success alert-dismissible fade show mt-3 col-lg-7 mx-auto text-center" role="alert">
+      <%= sucess %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+<% } %>
+
+<% if(error && error.length){ %>
+  <div class="row flash">
+    <div class="alert alert-danger alert-dismissible fade show mt-3 col-lg-7 mx-auto text-center" role="alert">
+      <%= error %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+<% } %>
