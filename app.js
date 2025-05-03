@@ -64,9 +64,10 @@ const sessionOptions = {
   },
 };
 
-// app.get("/", (req, res) => {
-//   res.send("app working properly");
-// });
+app.get("/", async(req, res) => {
+    let allListings = await Listing.find({});
+    res.render("listings/index.ejs", { allListings });
+});
 
 app.use(session(sessionOptions));
 app.use(flash());
